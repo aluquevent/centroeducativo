@@ -1,0 +1,122 @@
+@mixin flex($jc:center, $ai:center, $fw:wrap, $fd:row){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $fw;
+    flex-direction: $fd;
+}
+
+@mixin after($wi:50px, $he:50px, $dis:flex, $jc:center, $ai:center, $fd:column){
+    width: $wi;
+    height: $he;
+    display:$dis;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+// -------------------------- BUCLE PARA PADDINGS Y MARGINGS ------------------------------- //
+
+@for $i from 1 to 21{
+    .mt-#{$i}{
+        margin-top: $i*10px;
+    }
+    .pt-#{$i}{
+        padding-top:$i*10px;
+    }
+    .mb-#{$i}{
+        margin-bottom: $i*10px;
+    }
+    .pb-#{$i}{
+        padding-bottom: $i*10px;
+    }
+    .mr-#{$i}{
+        margin-right: $i*10px;
+    }
+    .pr-#{$i}{
+        padding-right: $i*10px;
+    }
+    .ml-#{$i}{
+        margin-left: $i*10px;
+    }
+    .pl-#{$i}{
+        padding-left: $i*10px;
+    }
+    .mx-#{$i}{
+        margin-right: $i*10px;
+        margin-left:$i*10px;
+    }
+    .px-#{$i}{
+        padding-right: $i*10px;
+        padding-left: $i*10px;
+    }
+    .my-#{$i}{
+        margin-top:$i*10px;
+        margin-bottom:$i*10px;
+    }
+    .py-#{$i}{
+        padding-top:$i*10px;
+        padding-bottom: $i*10px;
+    }
+    .m-#{$i}{
+        margin:$i*10px;
+    }
+    .p-#{$i}{
+        padding:$i*10px;
+    }
+
+}
+
+@mixin fondo($url, $posx:center, $posy:center){
+    background: url($url) no-repeat $posx $posy / cover;
+}
+
+@mixin tipo($font:$font-name, $weight:normal, $size:$font-size){
+    font-family:$font;
+    font-weight: $weight;
+    font-size:$size;
+}
+
+@mixin boton($radio:15px, $px:20px, $py:10px, $bgc:$azulCl, $color:$blanco){
+    border-radius: $radio;
+    padding: $py $px;
+    background-color: $bgc;
+    color:$color;
+    display: block;
+}
+
+@mixin logo($colorP:$azulCl, $colorSec:$blanco){
+    a{
+        @include tipo($weight:bold,$size:2rem);
+        margin:0;
+        color:$colorSec;
+        span{
+            color:$colorP;
+        }
+    }
+    
+}
+
+@mixin descText($color:$gris){
+    color:$color;
+    @include tipo($font:sans-serif);
+}
+
+@mixin colocador($py:200px, $ta:center, $mb:50px,$mt:0px){
+    padding:0px $py;
+    text-align: $ta;
+    margin-bottom: $mb;
+    margin-top: $mt;
+}
+
+@mixin separadorModificable($wi:100%,$he:1px,$bgc:$gris,$mx:15px){
+    content: "";
+    width: $wi;
+    height: $he;
+    background-color: $bgc;
+    margin:$mx 0px;
+}
+
+
+
+
